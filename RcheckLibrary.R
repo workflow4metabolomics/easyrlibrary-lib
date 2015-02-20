@@ -5,7 +5,7 @@
 # R functions to use in R scripts  
 # (management of various generic subroutines)
 # - -
-# V0 : script structure + first functions
+# V0: script structure + first functions
 ###############################################
 
 
