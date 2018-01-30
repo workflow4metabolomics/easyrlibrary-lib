@@ -1,5 +1,12 @@
 # vi: ft=r fdm=marker
 
+# Is {{{1
+################################################################
+
+df.is <- function(df, type) {
+	return(all(vapply(df, function(v) methods::is(v, type), FUN.VALUE = FALSE)))
+}
+
 # Force numeric {{{1
 ################################################################
 
