@@ -42,9 +42,9 @@ source_local <- function(...){
 #example: source_local("filter_script.R","RcheckLibrary.R")
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# Function which overwrite the default batch::parseCommandArgs to
+# Function to replace the default batch::parseCommandArgs to
 # solve an issue with batch if arguments are logical TRUE/FALSE
-parseCommandArgs <- function(...) {
+parseCommandArgs_TF <- function(...) {
     args <- batch::parseCommandArgs(...)
     for (key in names(args)) {
         if (args[key] %in% c("TRUE","FALSE"))
@@ -52,7 +52,7 @@ parseCommandArgs <- function(...) {
     }
     return(args)
 }
-# example: args <- parseCommandArgs(evaluate = FALSE) #interpretation of arguments given in command line as an R list of objects
+# example: args <- parseCommandArgs_TF(evaluate = FALSE) #interpretation of arguments given in command line as an R list of objects
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
