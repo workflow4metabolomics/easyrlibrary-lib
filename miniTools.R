@@ -119,7 +119,7 @@ reproduceID <- function(dataMatrix, Metadata, Mtype, id.match){
   } else {
 	rownames(temp.table) <- temp.table[,3]
 	temp.table <- t(temp.table[,-c(1,2,3)])
-	dataMatrix <- data.frame(rownames(temp.table),temp.table)
+	dataMatrix <- data.frame(rownames(temp.table),temp.table,check.names=FALSE)
 	colnames(dataMatrix)[1] <- colnames(id.match)[4]
   }
   rownames(dataMatrix) <- NULL
